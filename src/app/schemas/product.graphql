@@ -1,0 +1,18 @@
+type Product {
+  id: ID!
+  name: String!
+  category: Category
+  price: Float
+  availableColors: [String!]!
+  minimumOrder: Int
+  isActive: Boolean
+}
+
+input ProductInput {
+  name: String!
+  category: String!
+  price: Float!
+  availableColors: [String!]!
+  minimumOrder: Int
+  isActive: Boolean
+}

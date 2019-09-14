@@ -1,0 +1,12 @@
+type Mutation {
+  registerUser(name: String!, email: String!, password: String!): User
+
+  createCategory(name: String!, description: String, mainCategory: String): Category
+  updateCategory(id: ID!, name: String, description: String, mainCategory: String): Category
+  deleteCategory(id: ID!): Boolean
+
+  createProduct(payload: ProductInput): Product
+  updateProduct(id: ID!, payload: ProductInput): Product
+  deleteProduct(id: ID!): Boolean
+
+}

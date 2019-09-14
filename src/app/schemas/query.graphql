@@ -1,0 +1,10 @@
+type Query {
+  listUsers: [User!]!
+  findUser(id: ID!): User
+
+  listCategories: [Category!]!
+  findCategory(id: ID!): Category
+
+  listProducts: [Product!]!
+  findProduct(id: ID!): Product
+}
