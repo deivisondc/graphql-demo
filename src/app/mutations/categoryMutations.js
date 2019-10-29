@@ -1,14 +1,14 @@
 import Category from '../../../src/app/models/Category';
 
 export default {
-  createCategory: (_, { name, description }) => {
-    return Category.create({ name, description })
-      .then(async category => await Category.findById(category._id))
+  createCategory: async (_, { name }) => {
+    const newCategory = await Category.create({ name });
+    return await Category.findById(newCategory._id);
   },
 
-  updateCategory: (_, { id, name, description }) => {
-    return Category.findByIdAndUpdate(id, { name, description }, { new: true })
-      .then(async category => await Category.findById(category._id))
+  updateCategory: async (_, { id, name }) => {
+    const updatedCategory = await Category.findByIdAndUpdate(id, { name }, { new: true });
+    return await Category.findById(updatedCategory._id);
   },
 
   deleteCategory: async (_, { id }) => await Category.findByIdAndRemove(id).exec() !== null,
